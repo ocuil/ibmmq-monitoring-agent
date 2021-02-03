@@ -4,6 +4,6 @@
 - The motive to fork it is adatpt to make an easy integration with [elasticsearch](https://www.elastic.co/es/elasticsearch/) and or [logstash](https://www.elastic.co/es/logstash)
 
 ## Important
-![Version](https://github.com/ocuil/ibmmq-monitoring-agent/assets/version.svg)
-![GitHub Release](https://github.com/ocuil/ibmmq-monitoring-agent/assets/release.svg)
-![Implementations](https://github.com/ocuil/ibmmq-monitoring-agent/assets/non-for-production.svg)
+![Version](https://raw.githubusercontent.com/ocuil/assets/main/img/version.svg)
+![GitHub Release](https://raw.githubusercontent.com/ocuil/assets/main/img/release.svg)
+![Implementations](https://raw.githubusercontent.com/ocuil/assets/main/img/non-for-production.svg)

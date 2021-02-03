@@ -22,29 +22,29 @@ vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/includes
 ```
 ### files that are patched:
 ```
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqi.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiBO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiCBC.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiCBD.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiCTLO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiDLH.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMHO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMPO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQCD.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQCNO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQGMO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQMD.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQOD.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQPMO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQSCO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQSD.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiPCF.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiSRO.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiSTS.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiattrs.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqicb.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqicb_c.go
-	modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqistr.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqi.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiBO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiCBC.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiCBD.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiCTLO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiDLH.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMHO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMPO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQCD.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQCNO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQGMO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQMD.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQOD.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQPMO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQSCO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiMQSD.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiPCF.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiSRO.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiSTS.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqiattrs.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqicb.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqicb_c.go
+modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqistr.go
 
 ```
 ---

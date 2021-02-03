@@ -8,10 +8,18 @@ github.com/ibm-messaging/mq-metric-samples/v5/pkg/config
 # github.com/sirupsen/logrus v1.7.0
 ## explicit
 github.com/sirupsen/logrus
-# golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+# golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
+## explicit
 golang.org/x/crypto/ssh/terminal
-# golang.org/x/sys v0.0.0-20200420163511-1957bb5e6d1f
+# golang.org/x/sys v0.0.0-20210124154548-22da62e12c0c
+## explicit
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# gopkg.in/yaml.v2 v2.2.5
+# golang.org/x/term v0.0.0-20201210144234-2321bbc49cbf
+## explicit
+golang.org/x/term
+# gopkg.in/yaml.v2 v2.4.0
+## explicit
 gopkg.in/yaml.v2

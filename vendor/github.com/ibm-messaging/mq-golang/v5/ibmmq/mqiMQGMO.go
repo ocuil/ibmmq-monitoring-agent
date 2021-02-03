@@ -23,7 +23,7 @@ package ibmmq
 
 #include <stdlib.h>
 #include <string.h>
-#include <cmqc.h>
+#include "includes/cmqc.h"
 
 */
 import "C"

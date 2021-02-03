@@ -29,8 +29,8 @@ to select what can be done.
 
 #include <stdlib.h>
 #include <string.h>
-#include <cmqc.h>
-#include <cmqxc.h>
+#include "includes/cmqc.h"
+#include "includes/cmqxc.h"
 
 void freeCCDTUrl(MQCNO *mqcno) {
 #if defined(MQCNO_VERSION_6) && MQCNO_CURRENT_VERSION >= MQCNO_VERSION_6

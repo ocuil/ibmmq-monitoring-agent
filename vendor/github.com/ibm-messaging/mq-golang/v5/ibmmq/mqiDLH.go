@@ -21,8 +21,8 @@ package ibmmq
 
 /*
 #include <stdlib.h>
-#include <cmqc.h>
-#include <cmqcfc.h>
+#include "includes/cmqc.h"
+#include "includes/cmqcfc.h"
 */
 import "C"
 

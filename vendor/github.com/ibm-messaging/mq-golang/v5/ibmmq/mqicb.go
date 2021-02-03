@@ -26,7 +26,7 @@ This file deals with asynchronous delivery of MQ messages via the MQCTL/MQCB ver
 /*
 #include <stdlib.h>
 #include <string.h>
-#include <cmqc.h>
+#include "includes/cmqc.h"
 
 extern void MQCALLBACK_Go(MQHCONN, MQMD *, MQGMO *, PMQVOID, MQCBC *);
 extern void MQCALLBACK_C(MQHCONN hc,MQMD *md,MQGMO *gmo,PMQVOID buf,MQCBC *cbc);

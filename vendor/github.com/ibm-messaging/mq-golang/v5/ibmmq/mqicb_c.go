@@ -22,7 +22,7 @@ package ibmmq
 /*
 #include <stdlib.h>
 #include <stdio.h>
-#include <cmqc.h>
+#include "includes/cmqc.h"
 
 extern void MQCALLBACK_Go(MQHCONN, MQMD *, MQGMO *, PMQVOID, MQCBC *);
 void MQCALLBACK_C(MQHCONN hc,MQMD *md,MQGMO *gmo,PMQVOID buf,MQCBC *cbc) {

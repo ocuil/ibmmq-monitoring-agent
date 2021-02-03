@@ -18,7 +18,7 @@
 
 ---
 ---
-# Install build tools (ubuntu)
+# Install build tools (ubuntu) and download repo
 ```bash
 sudo apt update -y && sudo apt upgrade -y && sudo apt install build-essential -y
 #upload the IBM-MQC

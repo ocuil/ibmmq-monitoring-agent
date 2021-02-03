@@ -1,9 +1,10 @@
 # ibmmq-monitoring-agent to elastic
 
-- This code is base on [IBM MQ](https://github.com/ibm-messaging/mq-metric-samples) official repository, __so all code It's not my own__ :exclamation:
+- This code is base on [IBM® MQ golang metric packages](https://github.com/ibm-messaging/mq-golang) official repository, __so all code It's not my own__ :exclamation:
 - The motive to fork it, it is adapted to make an easy integration with [elasticsearch](https://www.elastic.co/es/elasticsearch/) and or [logstash](https://www.elastic.co/es/logstash) as an agent
 - Fixed the problems __cmqc.h No such file or directory__ :fire: and similar, caused by the absence of c headers in the import sections, go.mod and vendors
 - The laboratory we use to adapt and finally build the agent is Ubuntu 18.04.5 LTS, but changing to the appropriate command line yum and a right way to install golang, you'll should don't get a problem with that.
+- It's not ready yet to work with elasticsearch. _work in progress__
 
 ## Important
 ![Version](https://raw.githubusercontent.com/ocuil/assets/main/img/version.svg)

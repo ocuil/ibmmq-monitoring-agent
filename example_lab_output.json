@@ -1,0 +1,601 @@
+{
+  "collectionTime": {
+    "timeStamp": "2021-02-05T09:46:11Z",
+    "epoch": 1612518371
+  },
+  "points": [
+    {
+      "objectType": "queueManager",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity"
+      },
+      "metrics": {
+        "alterDurableSubscriptionCount": 0,
+        "commitCount": 0,
+        "concurrentConnectionsHighWaterMark": 26,
+        "cpuLoadFifteenMinuteAveragePercentage": 0.06,
+        "cpuLoadFiveMinuteAveragePercentage": 0.12,
+        "cpuLoadOneMinuteAveragePercentage": 0.37,
+        "createDurableSubscriptionCount": 0,
+        "createNonDurableSubscriptionCount": 0,
+        "deleteDurableSubscriptionCount": 0,
+        "deleteNonDurableSubscriptionCount": 0,
+        "durableSubscriberHighWaterMark": 2,
+        "durableSubscriberLowWaterMark": 2,
+        "expiredMessageCount": 0,
+        "exporterPublications": 17,
+        "failedBrowseCount": 0,
+        "failedCreateAlterResumeSubscriptionCount": 0,
+        "failedMqcbCount": 0,
+        "failedMqcloseCount": 0,
+        "failedMqconnMqconnxCount": 0,
+        "failedMqgetCount": 9,
+        "failedMqinqCount": 0,
+        "failedMqopenCount": 0,
+        "failedMqput1Count": 0,
+        "failedMqputCount": 0,
+        "failedMqsetCount": 0,
+        "failedMqsubrqCount": 0,
+        "failedTopicMqputMqput1Count": 0,
+        "gotNonPersistentMessagesBytes": 22172,
+        "gotPersistentMessagesBytes": 0,
+        "intervalDestructiveGetTotalBytes": 22172,
+        "intervalDestructiveGetTotalCount": 60,
+        "intervalMqputMqput1TotalBytes": 22172,
+        "intervalMqputMqput1TotalCount": 60,
+        "intervalTopicPutTotal": 5056,
+        "logCurrentPrimarySpaceInUsePercentage": 1.6,
+        "logFileSystemInUseBytes": 34204631040,
+        "logFileSystemMaxBytes": 3936284090368,
+        "logInUseBytes": 50331648,
+        "logLogicalWrittenBytes": 0,
+        "logMaxBytes": 83886080,
+        "logPhysicalWrittenBytes": 0,
+        "logWorkloadPrimarySpaceUtilizationPercentage": 1.6,
+        "logWriteLatencySeconds": 0.015063,
+        "logWriteSizeBytes": 5538,
+        "mqErrorsFileSystemFreeSpacePercentage": 99.13,
+        "mqErrorsFileSystemInUseBytes": 34204549120,
+        "mqFdcFileCount": 3,
+        "mqTraceFileSystemFreeSpacePercentage": 99.13,
+        "mqTraceFileSystemInUseBytes": 34204549120,
+        "mqcbCount": 0,
+        "mqcloseCount": 20,
+        "mqconnMqconnxCount": 0,
+        "mqctlCount": 0,
+        "mqdiscCount": 0,
+        "mqinqCount": 12,
+        "mqopenCount": 20,
+        "mqsetCount": 0,
+        "mqstatCount": 0,
+        "mqsubrqCount": 0,
+        "nonDurableSubscriberHighWaterMark": 17,
+        "nonDurableSubscriberLowWaterMark": 17,
+        "nonPersistentMessageBrowseBytes": 0,
+        "nonPersistentMessageBrowseCount": 0,
+        "nonPersistentMessageDestructiveGetCount": 60,
+        "nonPersistentMessageMqput1Count": 0,
+        "nonPersistentMessageMqputCount": 60,
+        "nonPersistentTopicMqputMqput1Count": 17,
+        "persistentMessageBrowseBytes": 0,
+        "persistentMessageBrowseCount": 0,
+        "persistentMessageDestructiveGetCount": 0,
+        "persistentMessageMqput1Count": 0,
+        "persistentMessageMqputCount": 0,
+        "persistentTopicMqputMqput1Count": 0,
+        "publishedToSubscribersBytes": 5056,
+        "publishedToSubscribersMessageCount": 17,
+        "purgedQueueCount": 0,
+        "putNonPersistentMessagesBytes": 22172,
+        "putPersistentMessagesBytes": 0,
+        "queueManagerFileSystemFreeSpacePercentage": 99.13,
+        "queueManagerFileSystemInUseBytes": 34204549120,
+        "ramFreePercentage": 51.54,
+        "ramTotalBytes": 33357299712,
+        "ramTotalEstimateForQueueManagerBytes": 191889408,
+        "resumeDurableSubscriptionCount": 0,
+        "rollbackCount": 0,
+        "subscriptionDeleteFailureCount": 0,
+        "systemCpuTimeEstimateForQueueManagerPercentage": 0.01,
+        "systemCpuTimePercentage": 0.27,
+        "topicMqputMqput1IntervalTotal": 17,
+        "userCpuTimeEstimateForQueueManagerPercentage": 0,
+        "userCpuTimePercentage": 0.5
+      }
+    },
+    {
+      "objectType": "queue",
+      "tags": {
+        "description": "-",
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "queue": "GRAVITY.COLA01",
+        "usage": "NORMAL"
+      },
+      "metrics": {
+        "averageQueueTimeSeconds": 0,
+        "destructiveMqgetFails": 0,
+        "destructiveMqgetFailsWithMqrcNoMsgAvailable": 0,
+        "destructiveMqgetFailsWithMqrcTruncatedMsgFailed": 0,
+        "destructiveMqgetNonPersistentBytes": 0,
+        "destructiveMqgetNonPersistentMessageCount": 0,
+        "destructiveMqgetPersistentBytes": 0,
+        "destructiveMqgetPersistentMessageCount": 0,
+        "expiredMessages": 0,
+        "lockContentionPercentage": 0,
+        "mqcloseCount": 0,
+        "mqgetBrowseFails": 0,
+        "mqgetBrowseFailsWithMqrcNoMsgAvailable": 0,
+        "mqgetBrowseFailsWithMqrcTruncatedMsgFailed": 0,
+        "mqgetBrowseNonPersistentBytes": 0,
+        "mqgetBrowseNonPersistentMessageCount": 0,
+        "mqgetBrowsePersistentBytes": 0,
+        "mqgetBrowsePersistentMessageCount": 0,
+        "mqgetBytes": 0,
+        "mqgetCount": 0,
+        "mqinqCount": 0,
+        "mqopenCount": 0,
+        "mqput1NonPersistentMessageCount": 0,
+        "mqput1PersistentMessageCount": 0,
+        "mqputBytes": 0,
+        "mqputMqput1Count": 0,
+        "mqputNonPersistentMessageCount": 0,
+        "mqputPersistentMessageCount": 0,
+        "mqsetCount": 0,
+        "nonPersistentBytes": 0,
+        "persistentBytes": 0,
+        "queueAvoidedPercentage": 0,
+        "queueAvoidedPutsPercentage": 0,
+        "queueDepth": 2,
+        "queuePurgedCount": 0,
+        "rolledBackMqgetCount": 0,
+        "rolledBackMqputCount": 0
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "SYSTEM.BROKER.ADMIN.STREAM/MQ/gravity                                         /StreamSupport",
+        "type": "sub"
+      },
+      "metrics": {
+        "messagesReceived": 0,
+        "timeSinceMsgReceived": 4738
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "SYSTEM.BROKER.ADMIN.STREAM/MQ/gravity                                         /StreamSupport",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d60072ccd23",
+        "subscription": "gravity SYSTEM.BROKER.INTER.BROKER.COMMUNICATIONS 414D51590101000000000000000000000000000000000000 SYSTEM.BROKER.ADMIN.STREAM MQ/gravity                                         /StreamSupport",
+        "topic": "SYSTEM.BROKER.ADMIN.STREAM/MQ/gravity                                         /StreamSupport",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 0,
+        "timeSinceMessagePublished": 4738,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d606347cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/CPU/SystemSummary",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d606747cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/DISK/SystemSummary",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605f47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATQ/GRAVITY.COLA01/PUT",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "_",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 0
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d604f47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/OPENCLOSE",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605d47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATQ/GRAVITY.COLA01/INQSET",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d606947cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/DISK/QMgrSummary",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605147cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/INQSET",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d604d47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/CONNDISC",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "$SYS",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 0
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605747cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/SYNCPOINT",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d606547cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/CPU/QMgrSummary",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "SYSTEM.BROKER.ADMIN.STREAM/MQ",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 0
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "SYSTEM.BROKER.ADMIN.STREAM",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 0
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605547cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/GET",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605b47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATQ/GRAVITY.COLA01/OPENCLOSE",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "SYSTEM.BROKER.ADMIN.STREAM/MQ/gravity",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 0
+      }
+    },
+    {
+      "objectType": "qmgr",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity"
+      },
+      "metrics": {
+        "channelInitiatorStatus": 2,
+        "commandServerStatus": 2,
+        "connectionCount": 26,
+        "uptime": 4739
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d606b47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/DISK/Log",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605947cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/SUBSCRIBE",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d605347cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/PUT",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d51206772617669747920202020202b011d600665db13",
+        "subscription": "SYSTEM.DEFAULT.SUB",
+        "topic": "",
+        "type": "ADMIN"
+      },
+      "metrics": {
+        "messsagesReceived": 0,
+        "timeSinceMessagePublished": 0,
+        "type": 2
+      }
+    },
+    {
+      "objectType": "queue",
+      "tags": {
+        "description": "-",
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "queue": "GRAVITY.COLA01",
+        "usage": "NORMAL"
+      },
+      "metrics": {
+        "attributeMaxDepth": 5000,
+        "attributeUsage": 0,
+        "inputHandles": 0,
+        "oldestMessageAge": 0,
+        "outputHandles": 0,
+        "qfileCurrentSize": 1,
+        "qfileMaxSize": 2088960,
+        "qtimeLong": 0,
+        "qtimeShort": 0,
+        "timeSinceGet": 0,
+        "timeSincePut": 0
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d606147cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATQ/GRAVITY.COLA01/GET",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    },
+    {
+      "objectType": "topic",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "topic": "$SYS/MQ",
+        "type": "status"
+      },
+      "metrics": {
+        "publisherCount": 0,
+        "subscriberCount": 0
+      }
+    },
+    {
+      "objectType": "subscription",
+      "tags": {
+        "platform": "UNIX",
+        "qmgr": "gravity",
+        "subid": "414d512067726176697479202020202060011d604b47cd23",
+        "subscription": "",
+        "topic": "$SYS/MQ/INFO/QMGR/gravity/Monitor/STATMQI/PUBLISH",
+        "type": "API"
+      },
+      "metrics": {
+        "messsagesReceived": 1,
+        "timeSinceMessagePublished": 6,
+        "type": 1
+      }
+    }
+  ]
+}

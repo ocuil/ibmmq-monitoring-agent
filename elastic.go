@@ -1,12 +1,17 @@
 package main
 
 import (
+	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/elastic/go-elasticsearch/v8"
+	"github.com/elastic/go-elasticsearch/v8/esapi"
 	vault "github.com/sosedoff/ansible-vault-go"
 )
 
@@ -39,6 +44,9 @@ func loadSecrets() {
 }
 
 func loadESconfig() elasticsearch.Config {
+	transport := http.DefaultTransport
+	tlsClientConfig := &tls.Config{InsecureSkipVerify: true}
+	transport.(*http.Transport).TLSClientConfig = tlsClientConfig
 	cfg := elasticsearch.Config{
 		Addresses: []string{
 			configuration.EShost,
@@ -59,11 +67,27 @@ func toLogstash() {
 
 }
 
-func toElastic() {
+func toElastic(metric []byte) {
 	cfg := loadESconfig()
-	_, err := elasticsearch.NewClient(cfg)
+	es, err := elasticsearch.NewClient(cfg)
 	if err != nil {
 		fmt.Printf("Error en la conexion contra elasticsearch: %s\n", err)
 	}
 
+	// debug line
+	//fmt.Println(string(metric))
+
+	currentTime := time.Now()
+	fecha := currentTime.Format("2006.01.02")
+	index := "ibmmq.v1." + fecha
+	req := esapi.IndexRequest{
+		Index:   index,
+		Body:    strings.NewReader(string(metric)),
+		Refresh: "true",
+	}
+	res, err := req.Do(context.Background(), es)
+	if err != nil {
+		fmt.Printf("Error getting response: %s", err)
+	}
+	defer res.Body.Close()
 }

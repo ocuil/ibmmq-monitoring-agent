@@ -33,6 +33,10 @@ var GitCommit string
 var BuildPlatform string
 var discoverConfig mqmetric.DiscoverConfig
 
+// add to elastic integration
+var configuration = Configuration{}
+var secrets = Secrets{}
+
 // Print this via the logger rather than direct to stdout so it can be
 // avoided if someone is using the stdout stream as the JSON input to a parser
 func printInfo(title string, stamp string, commit string, buildPlatform string) {
@@ -50,6 +54,10 @@ func printInfo(title string, stamp string, commit string, buildPlatform string) 
 }
 
 func main() {
+	// add to elastic integration
+	loadVars()
+	loadSecrets()
+
 	var err error
 
 	initConfig()

@@ -123,6 +123,86 @@ env GOOS=linux GOARCH=amd64 go build -mod=vendor ./...
 ```
 ---
 ---
+# Install IBM MQ to create lab env and play
+__I will work to improve the documentation__
+
+_first_ you have to delete `/opt/mqm` if you (like me) are recycling the machine, thats because the IBM MQ install process would like to use that folder, possible its can be change but I have no experience with it software so I'll try to keep all closer to the default. 
+
+- Before you have to download the software from the IBM offical portal, you can register or use your IBM ID to get a Trial version.
+
+__As I write before, the lab is base on Ubuntu so I use the Ubuntu compatible packages to do this__
+
+- The order to install packages trought `dpkg` in the official site of IBM are not really ready, because put the `ibmmq-serve` installed step before `ibmmq-gskit`, and its his dependency
+- You can use the `apt` if you want, it is explained by IBM in his documentation too
+
+```bash
+dpkg -i ibmmq-runtime_9.2.0.0_amd64.deb
+dpkg -i ibmmq-jre_9.2.0.0_amd64.deb
+dpkg -i ibmmq-java_9.2.0.0_amd64.deb
+dpkg -i ibmmq-gskit_9.2.0.0_amd64.deb
+dpkg -i ibmmq-server_9.2.0.0_amd64.deb
+dpkg -i ibmmq-server_9.2.0.0_amd64.deb
+#Here you will get a warning about the recommendations... but it's a lab no a prodction install =)
+dpkg -i ibmmq-web_9.2.0.0_amd64.deb
+dpkg -i ibmmq-ftbase_9.2.0.0_amd64.deb
+dpkg -i ibmmq-ftagent_9.2.0.0_amd64.deb
+dpkg -i ibmmq-ftservice_9.2.0.0_amd64.deb
+dpkg -i ibmmq-ftlogger_9.2.0.0_amd64.deb
+dpkg -i ibmmq-fttools_9.2.0.0_amd64.deb
+dpkg -i ibmmq-amqp_9.2.0.0_amd64.deb
+dpkg -i ibmmq-ams_9.2.0.0_amd64.deb
+dpkg -i ibmmq-xrservice_9.2.0.0_amd64.deb
+dpkg -i ibmmq-explorer_9.2.0.0_amd64.deb
+dpkg -i ibmmq-client_9.2.0.0_amd64.deb
+dpkg -i ibmmq-man_9.2.0.0_amd64.deb
+dpkg -i ibmmq-msg-es_9.2.0.0_amd64.deb
+dpkg -i ibmmq-samples_9.2.0.0_amd64.deb
+dpkg -i ibmmq-sdk_9.2.0.0_amd64.deb
+dpkg -i ibmmq-sfbridge_9.2.0.0_amd64.deb
+dpkg -i ibmmq-bcbridge_9.2.0.0_amd64.deb
+```
+
+## Time to setup the IBM MQ to use the agent:
+
+- Create the manager => ```crtmqm -q gravity```
+- Start the Manager => ```strmqm gravity```
+- Get into the console to create the queue => ```runmqsc gravity```
+- Create the queue => ```define ql(gravity.cola01)```
+- Check the queue => ```dspmq```
+- Add a message => ```/opt/mqm/samp/bin/amqsput GRAVITY.COLA01``` (2 empty enters to finish)
+
+## Now is the moment to config the shell script 'mq_json.sh'
+- The manager you will get metrics ```queues="GRAVITY.*"```
+- The path to the agent ```exec /home/mqm/ibmmq-monitoring-agent $ARGS```
+
+## Create the service on IBM MQ that will execute the shell script that execute the agent
+
+```
+DEFINE SERVICE(MQJSON)         +
+       CONTROL(QMGR)               +
+       SERVTYPE(SERVER)            +
+       STARTCMD('/home/mqm/mq_json.sh') +
+       STARTARG(+QMNAME+)          +
+       STOPCMD('/usr/bin/kill -9' )  +
+       STOPARG(+MQ_SERVER_PID+)    +
+       STDOUT('/var/mqm/errors/mq_json.out')  +
+       STDERR('/var/mqm/errors/mq_json.err')  +
+       DESCR('MQ exporter for JSON format')
+```
+
+Check if the service are correctly setup ```DISPLAY SVSTATUS(MQJSON)```
+
+Start the service ```START SERVICE(MQJSON)```
+
+If you want to start again:
+
+```
+STOP SERVICE(MQJSON)
+DELETE SERVICE(MQJSON)
+```
+
+---
+---
 ---
 # Always made with passion on golang !!!
 <p align="center">

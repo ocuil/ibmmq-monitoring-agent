@@ -63,7 +63,7 @@ func toElastic() {
 	cfg := loadESconfig()
 	_, err := elasticsearch.NewClient(cfg)
 	if err != nil {
-		fmt.Printf("Error en la conexion contra elasticsearch: ", err, "\n")
+		fmt.Printf("Error en la conexion contra elasticsearch: %s\n", err)
 	}
 
 }

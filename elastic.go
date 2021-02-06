@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	elasticsearch "github.com/elastic/go-elasticsearch/v8"
+	"github.com/elastic/go-elasticsearch/v8"
 	vault "github.com/sosedoff/ansible-vault-go"
 )
 
@@ -61,11 +61,9 @@ func toLogstash() {
 
 func toElastic() {
 	cfg := loadESconfig()
-	es, err := elasticsearch.NewClient(cfg)
+	_, err := elasticsearch.NewClient(cfg)
 	if err != nil {
 		fmt.Printf("Error en la conexion contra elasticsearch: ", err, "\n")
 	}
-
-	fmt.Printf(es)
 
 }

@@ -1,6 +1,7 @@
 go 1.15
 
 require (
+	github.com/elastic/go-elasticsearch v0.0.0 // indirect
 	github.com/elastic/go-elasticsearch/v8 v8.0.0-20201229214741-2366c2514674
 	github.com/ibm-messaging/mq-golang/v5 v5.1.3
 	github.com/ibm-messaging/mq-metric-samples/v5 v5.1.3

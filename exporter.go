@@ -428,7 +428,7 @@ func Collect() error {
 		// elastic integration add from here
 		b, _ := json.MarshalIndent(j, "", "  ")
 		//fmt.Printf("%s\n", b)
-		ElasticTest(b)
+		elasticTest(b)
 
 	}
 

@@ -8,8 +8,12 @@ github.com/ibm-messaging/mq-metric-samples/v5/pkg/config
 # github.com/sirupsen/logrus v1.7.0
 ## explicit
 github.com/sirupsen/logrus
+# github.com/sosedoff/ansible-vault-go v0.0.0-20201201002713-782dc5c40224
+## explicit
+github.com/sosedoff/ansible-vault-go
 # golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
 ## explicit
+golang.org/x/crypto/pbkdf2
 golang.org/x/crypto/ssh/terminal
 # golang.org/x/sys v0.0.0-20210124154548-22da62e12c0c
 ## explicit

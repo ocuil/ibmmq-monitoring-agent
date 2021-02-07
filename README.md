@@ -7,9 +7,15 @@
 - It's not ready yet to work with elasticsearch. __work in progress__
 
 ## Important
+![Golang](https://img.shields.io/badge/Go-1.15.7-blue)
+![Ubuntu](https://img.shields.io/badge/ubuntu-18.04.5%20LTS-red)
 ![Version](https://raw.githubusercontent.com/ocuil/assets/main/img/version.svg)
-![GitHub Release](https://raw.githubusercontent.com/ocuil/assets/main/img/release.svg)
+![Release](https://img.shields.io/badge/release-alpha-brightgreen)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![Implementations](https://raw.githubusercontent.com/ocuil/assets/main/img/non-for-production.svg)
+![Size](https://img.shields.io/github/languages/code-size/ocuil/ibmmq-monitoring-agent)
+![RepoSize](https://img.shields.io/github/repo-size/ocuil/ibmmq-monitoring-agent)
+![Lines](https://img.shields.io/tokei/lines/github/ocuil/ibmmq-monitoring-agent)
 
 ---
 # asciicast video about laboratory

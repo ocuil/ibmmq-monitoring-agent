@@ -59,7 +59,7 @@ func loadESconfig() elasticsearch.Config {
 
 // This function is for testing porpouse and validate the steps to the integrations
 func elasticTest(metric []byte) {
-	fmt.Printf("%s\n", metric)
+	//fmt.Printf("%s\n", metric)
 	fmt.Printf("End Metric")
 }
 
@@ -90,4 +90,37 @@ func toElastic(metric []byte) {
 		fmt.Printf("Error getting response: %s", err)
 	}
 	defer res.Body.Close()
+}
+
+type elasticStruct struct {
+	TimeStamp  string `json:"timeStamp"`
+	Epoch      int64  `json:"epoch"`
+	ObjectList struct {
+		ObjectType string             `json:"objectType"`
+		Tags       map[string]string  `json:"tags"`
+		Metric     map[string]float64 `json:"metrics"`
+	} `json:"objectList"`
+}
+
+func debugjsonReportStruct(j jsonReportStruct) {
+
+	var doc elasticStruct
+
+	doc.TimeStamp = j.CollectionTime.TimeStamp
+	doc.Epoch = j.CollectionTime.Epoch
+
+	for _, value := range j.Points {
+		//fmt.Println(value.ObjectType)
+		if value.ObjectType == "queue" {
+			for tag, value := range value.Tags {
+				fmt.Println(tag, value)
+				//if len(doc.ObjectList.Tags[tag]) == 0 {
+				//	doc.ObjectList.Tags[tag] = value
+				//}
+				//doc.ObjectList.Tags[tag] = value
+			}
+		}
+	}
+
+	fmt.Println(doc)
 }

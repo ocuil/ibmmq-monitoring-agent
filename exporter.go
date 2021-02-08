@@ -25,7 +25,6 @@ and update the various data points.
 */
 
 import (
-	"encoding/json"
 	"strings"
 	"time"
 
@@ -426,11 +425,11 @@ func Collect() error {
 		}
 
 		// elastic integration add from here
-		b, _ := json.MarshalIndent(j, "", "  ")
+		//b, _ := json.MarshalIndent(j, "", "  ")
 		//fmt.Printf("%s\n", b)
-		elasticTest(b)
+		//elasticTest(b)
 		//toElastic(b)
-		debugjsonReportStruct(j)
+		createJSON(j)
 
 	}
 

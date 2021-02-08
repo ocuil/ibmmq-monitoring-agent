@@ -57,25 +57,20 @@ func loadESconfig() elasticsearch.Config {
 	return cfg
 }
 
-// This function is for testing porpouse and validate the steps to the integrations
-func elasticTest(metric []byte) {
-	//fmt.Printf("%s\n", metric)
-	fmt.Printf("End Metric\n")
-}
-
 func toLogstash() {
 
 }
 
-func toElastic(metric []byte) {
+func toElastic(doc elasticStruct) {
+	metric, _ := json.MarshalIndent(doc, "", "  ")
+
+	fmt.Printf("%s\n", metric)
+
 	cfg := loadESconfig()
 	es, err := elasticsearch.NewClient(cfg)
 	if err != nil {
 		fmt.Printf("Error en la conexion contra elasticsearch: %s\n", err)
 	}
-
-	// debug line
-	//fmt.Println(string(metric))
 
 	currentTime := time.Now()
 	fecha := currentTime.Format("2006.01.02")
@@ -89,7 +84,7 @@ func toElastic(metric []byte) {
 	if err != nil {
 		fmt.Printf("Error getting response: %s", err)
 	}
-	defer res.Body.Close()
+	res.Body.Close()
 }
 
 type ObjectType struct {
@@ -105,73 +100,35 @@ type elasticStruct struct {
 	} `json:"objectList"`
 }
 
-func debugjsonReportStruct(j jsonReportStruct) {
+func createJSON(j jsonReportStruct) {
 
 	var doc elasticStruct = elasticStruct{}
 
 	doc.TimeStamp = j.CollectionTime.TimeStamp
 	doc.Epoch = j.CollectionTime.Epoch
-	//doc.ObjectList.ObjectType.Tags = make(map[string]string)
-	//doc.ObjectList.ObjectType.Metric = make(map[string]float64)
-	//doc.ObjectList.Object = nil
 
 	for _, value := range j.Points {
 
-		/*
-			for range value.ObjectType {
-				fmt.Println(value.ObjectType)
-			}
-		*/
+		objectType := make(map[string]ObjectType)
+		tags := make(map[string]string)
+		metrics := make(map[string]float64)
 
-		//fmt.Println("Objeto ", value.ObjectType)
+		for tag, value := range value.Tags {
+			tags[tag] = value
+		}
+		for metric, value := range value.Metric {
+			metrics[metric] = value
+		}
+		objectType[value.ObjectType] = ObjectType{
+			Tags:   tags,
+			Metric: metrics,
+		}
+		doc.ObjectList.ObjectType = objectType
 
-		if value.ObjectType == "queueManager" || value.ObjectType == "qmgr" {
-
-			//var queueManager = make(map[string]string)
-
-			var objectType = make(map[string]ObjectType)
-			var tags = make(map[string]string)
-			var metrics = make(map[string]float64)
-
-			for tag, value := range value.Tags {
-				//fmt.Println(tag, value)
-				tags[tag] = value
-			}
-
-			for metric, value := range value.Metric {
-				//fmt.Println(metric, value)
-				metrics[metric] = value
-			}
-
-			objectType["queueManager"] = ObjectType{
-				Tags:   tags,
-				Metric: metrics,
-			}
-
-			doc.ObjectList.ObjectType = objectType
-
-			//queueManager.Tags = map[interface{}]interface{}
-			//doc.ObjectList.Object = append(doc.ObjectList.Object, objectType)
-
+		if configuration.SendTO == "elastic" {
+			go toElastic(doc)
 		}
 
-		/*
-			if value.ObjectType == "queue" {
-				doc.ObjectList.ObjectType = value.ObjectType
-				for tag, value := range value.Tags {
-					//fmt.Println(tag, value)
-					doc.ObjectList.Tags[tag] = value
-				}
-				for metricName, metricValue := range value.Metric {
-					//fmt.Println(metricName, metricValue)
-					doc.ObjectList.Metric[metricName] = metricValue
-				}
-			}
-		*/
 	}
-
-	//fmt.Println(doc)
-	jsonDoc, _ := json.MarshalIndent(doc, "", "  ")
-	fmt.Printf("%s\n", jsonDoc)
 
 }

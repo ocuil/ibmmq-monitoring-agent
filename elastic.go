@@ -60,7 +60,7 @@ func loadESconfig() elasticsearch.Config {
 // This function is for testing porpouse and validate the steps to the integrations
 func elasticTest(metric []byte) {
 	//fmt.Printf("%s\n", metric)
-	fmt.Printf("End Metric")
+	fmt.Printf("End Metric\n")
 }
 
 func toLogstash() {
@@ -92,35 +92,86 @@ func toElastic(metric []byte) {
 	defer res.Body.Close()
 }
 
+type ObjectType struct {
+	Tags   map[string]string  `json:"tags"`
+	Metric map[string]float64 `json:"metrics"`
+}
+
 type elasticStruct struct {
 	TimeStamp  string `json:"timeStamp"`
 	Epoch      int64  `json:"epoch"`
 	ObjectList struct {
-		ObjectType string             `json:"objectType"`
-		Tags       map[string]string  `json:"tags"`
-		Metric     map[string]float64 `json:"metrics"`
+		ObjectType map[string]ObjectType `json:"objectType"`
 	} `json:"objectList"`
 }
 
 func debugjsonReportStruct(j jsonReportStruct) {
 
-	var doc elasticStruct
+	var doc elasticStruct = elasticStruct{}
 
 	doc.TimeStamp = j.CollectionTime.TimeStamp
 	doc.Epoch = j.CollectionTime.Epoch
+	//doc.ObjectList.ObjectType.Tags = make(map[string]string)
+	//doc.ObjectList.ObjectType.Metric = make(map[string]float64)
+	//doc.ObjectList.Object = nil
 
 	for _, value := range j.Points {
-		//fmt.Println(value.ObjectType)
-		if value.ObjectType == "queue" {
-			for tag, value := range value.Tags {
-				fmt.Println(tag, value)
-				//if len(doc.ObjectList.Tags[tag]) == 0 {
-				//	doc.ObjectList.Tags[tag] = value
-				//}
-				//doc.ObjectList.Tags[tag] = value
+
+		/*
+			for range value.ObjectType {
+				fmt.Println(value.ObjectType)
 			}
+		*/
+
+		//fmt.Println("Objeto ", value.ObjectType)
+
+		if value.ObjectType == "queueManager" || value.ObjectType == "qmgr" {
+
+			//var queueManager = make(map[string]string)
+
+			var objectType = make(map[string]ObjectType)
+			var tags = make(map[string]string)
+			var metrics = make(map[string]float64)
+
+			for tag, value := range value.Tags {
+				//fmt.Println(tag, value)
+				tags[tag] = value
+			}
+
+			for metric, value := range value.Metric {
+				//fmt.Println(metric, value)
+				metrics[metric] = value
+			}
+
+			objectType["queueManager"] = ObjectType{
+				Tags:   tags,
+				Metric: metrics,
+			}
+
+			doc.ObjectList.ObjectType = objectType
+
+			//queueManager.Tags = map[interface{}]interface{}
+			//doc.ObjectList.Object = append(doc.ObjectList.Object, objectType)
+
 		}
+
+		/*
+			if value.ObjectType == "queue" {
+				doc.ObjectList.ObjectType = value.ObjectType
+				for tag, value := range value.Tags {
+					//fmt.Println(tag, value)
+					doc.ObjectList.Tags[tag] = value
+				}
+				for metricName, metricValue := range value.Metric {
+					//fmt.Println(metricName, metricValue)
+					doc.ObjectList.Metric[metricName] = metricValue
+				}
+			}
+		*/
 	}
 
-	fmt.Println(doc)
+	//fmt.Println(doc)
+	jsonDoc, _ := json.MarshalIndent(doc, "", "  ")
+	fmt.Printf("%s\n", jsonDoc)
+
 }

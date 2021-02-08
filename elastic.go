@@ -87,17 +87,12 @@ func toElastic(doc elasticStruct) {
 	res.Body.Close()
 }
 
-type ObjectType struct {
-	Tags   map[string]string  `json:"tags"`
-	Metric map[string]float64 `json:"metrics"`
-}
-
 type elasticStruct struct {
-	TimeStamp  string `json:"timeStamp"`
-	Epoch      int64  `json:"epoch"`
-	ObjectList struct {
-		ObjectType map[string]ObjectType `json:"objectType"`
-	} `json:"objectList"`
+	TimeStamp  string             `json:"timeStamp"`
+	Epoch      int64              `json:"epoch"`
+	ObjectType string             `json:"objectType"`
+	Tags       map[string]string  `json:"tags"`
+	Metric     map[string]float64 `json:"metrics"`
 }
 
 func createJSON(j jsonReportStruct) {
@@ -109,7 +104,6 @@ func createJSON(j jsonReportStruct) {
 
 	for _, value := range j.Points {
 
-		objectType := make(map[string]ObjectType)
 		tags := make(map[string]string)
 		metrics := make(map[string]float64)
 
@@ -119,11 +113,10 @@ func createJSON(j jsonReportStruct) {
 		for metric, value := range value.Metric {
 			metrics[metric] = value
 		}
-		objectType[value.ObjectType] = ObjectType{
-			Tags:   tags,
-			Metric: metrics,
-		}
-		doc.ObjectList.ObjectType = objectType
+
+		doc.ObjectType = value.ObjectType
+		doc.Tags = tags
+		doc.Metric = metrics
 
 		if configuration.SendTO == "elastic" {
 			go toElastic(doc)

@@ -196,6 +196,8 @@ modified:   vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/mqistr.go
 env GOOS=linux GOARCH=amd64 go build -mod=vendor ./...
 ```
 
+The agent use an external config files locate in `conf` folder, there are secrets.json (ansible vault) with the credentials of the `elasticsearch` cluster and vars.json with the endpoint and a new parameter to select (in a future versions) the output of the agent, currently only is `elasticsearch`
+ 
 ---
 ## :large_blue_diamond: Install IBM MQ Server to deploy a full lab env and play
 
@@ -271,6 +273,11 @@ DELETE SERVICE(MQJSON)
 ```
 
 ---
+## If you want to run 'stan alone' the agent in a server with `IBM MQ`
+```bash
+./ibmmq-monitoring-agent -ibmmq.queueManager="gravity" -ibmmq.monitoredQueues="GRAVITY.*" -ibmmq.monitoredChannels="TO.*,SYSTEM.DEF.SVRCONN" -ibmmq.monitoredTopics="#" -ibmmq.monitoredSubscriptions="*" -ibmmq.interval="10s" -ibmmq.useStatus="true" -log.level="error"
+```
+remember that you need the `conf` folder in the same directory of the binary where are the secrets and config vars
 ---
 ---
 # Always made with passion on golang !!!

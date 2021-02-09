@@ -62,6 +62,7 @@ But if you want to play you can install just the `IBM MQ` Server and ... [`#have
 ## deploy a minimum laboratory &rightarrow; ![Golang](https://img.shields.io/badge/Go-1.15.7-blue) ![Ubuntu](https://img.shields.io/badge/ubuntu-18.04.5%20LTS-red)
 
 In this case just we'll setup the `IBM MQ` Client, clone the repository, patch and compile it:
+
 You can take a look to the next video:
 
 

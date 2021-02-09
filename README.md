@@ -211,7 +211,6 @@ dpkg -i ibmmq-jre_9.2.0.0_amd64.deb
 dpkg -i ibmmq-java_9.2.0.0_amd64.deb
 dpkg -i ibmmq-gskit_9.2.0.0_amd64.deb
 dpkg -i ibmmq-server_9.2.0.0_amd64.deb
-dpkg -i ibmmq-server_9.2.0.0_amd64.deb
 #Here you will get a warning about the recommendations... but it's a lab no a prodction install =)
 dpkg -i ibmmq-web_9.2.0.0_amd64.deb
 dpkg -i ibmmq-ftbase_9.2.0.0_amd64.deb

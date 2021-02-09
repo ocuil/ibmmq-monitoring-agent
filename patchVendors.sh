@@ -1,5 +1,5 @@
 #!/bin/bash
-[ ! -d "/path/to/dir" ] && cp -aR CHeaders ./vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/includes
+[ ! -d "./vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/includes" ] && cp -aR CHeaders ./vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/includes
 
 find ./vendor/github.com/ibm-messaging/mq-golang/v5/ibmmq/ -type f -name "mqi*" -exec \
     sed -i -e 's%<cmqc.h>%"includes/cmqc.h"%g' {} +

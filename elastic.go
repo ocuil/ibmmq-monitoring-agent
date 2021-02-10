@@ -51,8 +51,8 @@ func loadESconfig() elasticsearch.Config {
 		Addresses: []string{
 			configuration.EShost,
 		},
-		Username: secrets.USER_elastic,
-		Password: secrets.PWD_elastic,
+		Username: secrets.USERelastic,
+		Password: secrets.PWDelastic,
 	}
 	return cfg
 }

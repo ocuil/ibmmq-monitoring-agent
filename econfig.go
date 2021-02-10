@@ -6,6 +6,6 @@ type Configuration struct {
 }
 
 type Secrets struct {
-	PWD_elastic  string
-	USER_elastic string
+	PWDelastic  string
+	USERelastic string
 }

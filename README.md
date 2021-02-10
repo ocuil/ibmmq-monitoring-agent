@@ -31,6 +31,7 @@ So that's it, we need metrics from `IBM MQ` services, and we have no integration
 ![Golang](https://img.shields.io/badge/Go-1.15.7-blue)
 ![Ubuntu](https://img.shields.io/badge/ubuntu-18.04.5%20LTS-red)
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/ocuil/ibmmq-monitoring-agent)](https://goreportcard.com/report/github.com/ocuil/ibmmq-monitoring-agent)
 ![Version](https://raw.githubusercontent.com/ocuil/assets/main/img/version.svg)
 ![Release](https://img.shields.io/badge/release-alpha-brightgreen)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
